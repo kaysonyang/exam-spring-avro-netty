@@ -1,0 +1,14 @@
+{
+    "namespace": "com.bestna39.exam.springavronetty.protocol",
+    "protocol": "CalculatorAdd",
+
+    "types": [],
+
+    "messages": {
+        "add": {
+                "request":[ { "name": "x", "type": "double"},
+                            { "name": "y", "type": "double"} ],
+                "response":"double"
+            }
+    }
+}

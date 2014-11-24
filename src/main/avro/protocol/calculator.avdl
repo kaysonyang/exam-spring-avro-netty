@@ -1,0 +1,5 @@
+@namespace("com.bestna39.exam.springavronetty.protocol")
+protocol Calculator {
+    import protocol "calculator_add.avpr";
+    import protocol "calculator_substract.avpr";
+}
