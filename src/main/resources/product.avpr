@@ -1,0 +1,56 @@
+{
+     "namespace": "com.wsj.product.protocol",
+     "protocol": "ProductApi",
+     "doc": "product test api",
+     "types": [
+          {
+                "type": "record",
+                "name": "Product",
+                "fields": [
+                    {"name": "productId","type": "string"},
+                    {"name": "productName","type": "string"},
+                    {"name": "productSerial","type": "int"},
+                    {"name": "status","type": "int"},
+                    {"name": "isStock","type": "boolean"},
+                    {"name": "logic","type": "long"}
+                ]
+            },
+
+            {
+                    "type": "record",
+                    "name": "ProductList",
+                    "fields": [
+                        {"name": "ProductList","type": [
+                                                         {"type": "array", "items": "Product","default":"null"},
+                                                         "null"
+                                                        ]
+                        }
+                    ]
+           },
+
+           {
+                   "type": "error",
+                   "name": "ProductListServiceError",
+                   "fields": [
+                       {"name": "code","type" : "int"},
+                       {"name": "message","type": "string"}
+                   ]
+           }
+
+     ],
+
+    "messages": {
+        "getProductList": {
+          "request": [
+            {
+              "name": "productId",
+              "type": "string"
+            }
+          ],
+          "response": "ProductList",
+          "errors": [
+            "ProductListServiceError"
+          ]
+        }
+      }
+ }
